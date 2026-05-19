@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dental Fixe Portimão - Clínica dentária com especialistas portugueses e brasileiros. Implantes, estética oral, ortodontia e odontopediatria. Marque a sua consulta.">
+    <meta name="description" content="Dental Fixe Portimão - Clínica dentária dedicada ao seu sorriso. Implantes, estética oral, ortodontia e odontopediatria. Marque a sua consulta.">
     <meta name="keywords" content="dentista Portimão, clínica dentária Algarve, implantes dentários, facetas, branqueamento dentário, ortodontia">
     <meta property="og:title" content="Dental Fixe - Clínica Dentária em Portimão">
-    <meta property="og:description" content="Especialistas portugueses e brasileiros para o seu melhor sorriso.">
+    <meta property="og:description" content="Tratamentos de excelência e atendimento humanizado para o seu melhor sorriso.">
     <meta property="og:type" content="website">
-    <title>Dental Fixe — Clínica Dentária em Portimão | Especialistas Luso-Brasileiros</title>
+    <title>Dental Fixe — Clínica Dentária em Portimão</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -578,6 +578,133 @@
         .service-cta:hover .service-cta-arrow { transform: translateX(4px); }
 
         /* ===========================
+           BEFORE & AFTER (RESULTADOS)
+           =========================== */
+        .results {
+            background: var(--color-white);
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+        .result-card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .result-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+        .ba-slider {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            cursor: ew-resize;
+            user-select: none;
+            background: var(--color-dark);
+            -webkit-user-select: none;
+            touch-action: none;
+        }
+        .ba-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            -webkit-user-drag: none;
+        }
+        .ba-img-after { z-index: 1; }
+        .ba-img-before {
+            z-index: 2;
+            clip-path: inset(0 50% 0 0);
+            transition: none;
+        }
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: var(--color-white);
+            transform: translateX(-50%);
+            z-index: 3;
+            box-shadow: 0 0 16px rgba(0,0,0,0.4);
+            pointer-events: none;
+        }
+        .ba-handle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: var(--color-white);
+            border-radius: 50%;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+        }
+        .ba-handle-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            color: var(--color-primary);
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .ba-tag {
+            position: absolute;
+            top: 16px;
+            padding: 6px 14px;
+            background: rgba(0,0,0,0.65);
+            color: var(--color-white);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 4;
+            pointer-events: none;
+        }
+        .ba-tag-before { left: 16px; }
+        .ba-tag-after { right: 16px; }
+
+        .result-info {
+            padding: 24px 26px 28px;
+        }
+        .result-info h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--color-dark);
+        }
+        .result-info p {
+            font-size: 14.5px;
+            color: var(--color-gray);
+            line-height: 1.65;
+        }
+
+        .results-note {
+            text-align: center;
+            margin-top: 36px;
+            font-size: 13px;
+            color: var(--color-gray);
+            font-style: italic;
+        }
+
+        /* ===========================
            TESTIMONIALS
            =========================== */
         .testimonials {
@@ -954,6 +1081,7 @@
             <nav class="nav-menu" id="navMenu">
                 <a href="#sobre">Sobre Nós</a>
                 <a href="#servicos">Especialidades</a>
+                <a href="#resultados">Resultados</a>
                 <a href="#testemunhos">Testemunhos</a>
                 <a href="#contacto">Contacto</a>
                 <a href="tel:282416519" class="btn btn-primary btn-nav btn-sm">
@@ -983,7 +1111,7 @@
                 <span class="text-accent">Começa Aqui</span>
             </h1>
             <p class="hero-slogan">
-                Agora Portimão tem a melhor opção em odontologia. Especialistas brasileiros e portugueses juntos para lhe trazer o seu melhor sorriso e saúde bucal.
+                Em Portimão, uma clínica dentária dedicada à sua saúde oral e ao seu melhor sorriso — com atendimento humanizado, tecnologia avançada e tratamentos personalizados.
             </p>
             <div class="hero-actions">
                 <a href="tel:282416519" class="btn btn-primary btn-lg">
@@ -999,7 +1127,7 @@
             <div class="hero-trust">
                 <div class="hero-trust-item">
                     <span class="hero-trust-icon">🏥</span>
-                    <span>Equipa Luso-Brasileira</span>
+                    <span>Equipa Especializada</span>
                 </div>
                 <div class="hero-trust-item">
                     <span class="hero-trust-icon">✨</span>
@@ -1018,7 +1146,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1000&q=80&auto=format&fit=crop"
+                    <img src="fotos/equipa.jpg"
                          alt="Clínica Dental Fixe — Equipa profissional"
                          class="about-image"
                          loading="lazy">
@@ -1029,8 +1157,8 @@
                 </div>
                 <div class="about-content">
                     <span class="section-tag">A Nossa Essência</span>
-                    <h2>Onde a excelência luso-brasileira se encontra</h2>
-                    <p>Na <strong>Dental Fixe</strong>, unimos a precisão técnica da odontologia portuguesa com a experiência e inovação brasileira. Esta combinação única permite-nos oferecer tratamentos de referência, num ambiente acolhedor onde cada paciente é tratado com a dedicação que merece.</p>
+                    <h2>Cuidamos de si com a atenção que merece</h2>
+                    <p>Na <strong>Dental Fixe</strong>, acreditamos que cada sorriso conta uma história única. Por isso, dedicamo-nos a oferecer tratamentos personalizados, num ambiente acolhedor onde cada paciente é tratado com a atenção e o profissionalismo que merece.</p>
                     <p>A nossa equipa é composta por especialistas reconhecidos, dedicados a proporcionar resultados duradouros através das mais recentes tecnologias e técnicas comprovadas. Acreditamos que um sorriso saudável é a base para uma vida com mais confiança.</p>
 
                     <div class="about-features">
@@ -1131,6 +1259,81 @@
         </div>
     </section>
 
+    <!-- ===== BEFORE & AFTER (RESULTADOS) ===== -->
+    <section class="results fade-in" id="resultados">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Resultados Reais</span>
+                <h2 class="section-title">Transformações <span style="color: var(--color-primary); font-style: italic;">que falam por si</span></h2>
+                <p class="section-subtitle">Arraste o controlo no centro de cada imagem para revelar a transformação. Casos reais de pacientes da Dental Fixe.</p>
+            </div>
+
+            <div class="results-grid">
+                <!-- Card 1: Facetas -->
+                <article class="result-card">
+                    <div class="ba-slider">
+                        <img class="ba-img ba-img-after"
+                             src="fotos/antes-depois-1-depois.jpg"
+                             alt="Depois - Facetas Dentárias" draggable="false">
+                        <img class="ba-img ba-img-before"
+                             src="fotos/antes-depois-1-antes.jpg"
+                             alt="Antes - Facetas Dentárias" draggable="false">
+                        <div class="ba-handle"></div>
+                        <span class="ba-handle-icon">⇆</span>
+                        <div class="ba-tag ba-tag-before">Antes</div>
+                        <div class="ba-tag ba-tag-after">Depois</div>
+                    </div>
+                    <div class="result-info">
+                        <h3>Facetas Dentárias</h3>
+                        <p>Sorriso totalmente renovado com facetas em cerâmica de alta estética e durabilidade.</p>
+                    </div>
+                </article>
+
+                <!-- Card 2: Implantes -->
+                <article class="result-card">
+                    <div class="ba-slider">
+                        <img class="ba-img ba-img-after"
+                             src="fotos/antes-depois-2-depois.jpg"
+                             alt="Depois - Implantes" draggable="false">
+                        <img class="ba-img ba-img-before"
+                             src="fotos/antes-depois-2-antes.jpg"
+                             alt="Antes - Implantes" draggable="false">
+                        <div class="ba-handle"></div>
+                        <span class="ba-handle-icon">⇆</span>
+                        <div class="ba-tag ba-tag-before">Antes</div>
+                        <div class="ba-tag ba-tag-after">Depois</div>
+                    </div>
+                    <div class="result-info">
+                        <h3>Implantes Dentários</h3>
+                        <p>Recuperação total da função e estética com implantes planeados ao milímetro.</p>
+                    </div>
+                </article>
+
+                <!-- Card 3: Branqueamento -->
+                <article class="result-card">
+                    <div class="ba-slider">
+                        <img class="ba-img ba-img-after"
+                             src="fotos/antes-depois-3-depois.jpg"
+                             alt="Depois - Lipo de papada" draggable="false">
+                        <img class="ba-img ba-img-before"
+                             src="fotos/antes-depois-3-antes.jpg"
+                             alt="Antes - Lipo de papada" draggable="false">
+                        <div class="ba-handle"></div>
+                        <span class="ba-handle-icon">⇆</span>
+                        <div class="ba-tag ba-tag-before">Antes</div>
+                        <div class="ba-tag ba-tag-after">Depois</div>
+                    </div>
+                    <div class="result-info">
+                        <h3>Lipo de Papada</h3>
+                        <p>Transformação facial com procedimento minimamente invasivo e resultados naturais.</p>
+                    </div>
+                </article>
+            </div>
+
+            <p class="results-note">Imagens demonstrativas — a versão final apresentará casos reais da clínica.</p>
+        </div>
+    </section>
+
     <!-- ===== TESTIMONIALS ===== -->
     <section class="testimonials fade-in" id="testemunhos">
         <div class="container">
@@ -1143,7 +1346,7 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
-                    <p class="testimonial-quote">"Experiência absolutamente excelente. A equipa brasileira e portuguesa complementa-se de uma forma única — atendimento humano, técnica impecável e tudo explicado ao detalhe. A minha limpeza foi a melhor que alguma vez fiz."</p>
+                    <p class="testimonial-quote">"Experiência absolutamente excelente. Atendimento humano, técnica impecável e tudo explicado ao detalhe. A minha limpeza foi a melhor que alguma vez fiz e saí da clínica com a sensação de ter sido realmente bem cuidada."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">M</div>
                         <div>
@@ -1167,7 +1370,7 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
-                    <p class="testimonial-quote">"Coloquei facetas na Dental Fixe e o resultado superou todas as minhas expectativas. A sensibilidade estética da médica brasileira é incrível e a precisão técnica da equipa portuguesa garantiu um sorriso natural e duradouro."</p>
+                    <p class="testimonial-quote">"Coloquei facetas na Dental Fixe e o resultado superou todas as minhas expectativas. A sensibilidade estética e a precisão técnica da equipa garantiram-me um sorriso natural, harmonioso e duradouro."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">C</div>
                         <div>
@@ -1203,7 +1406,7 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
-                    <p class="testimonial-quote">"Sempre fui muito exigente com saúde oral. A combinação de especialistas portugueses e brasileiros traz uma qualidade que não encontrei noutras clínicas. Profissionalismo, simpatia e resultados — tudo num só sítio."</p>
+                    <p class="testimonial-quote">"Sempre fui muito exigente com saúde oral. A qualidade dos tratamentos, a simpatia da equipa e o ambiente da clínica fazem toda a diferença — não encontrei o mesmo nível noutras clínicas em Portimão."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">P</div>
                         <div>
@@ -1261,7 +1464,7 @@
                         <span class="logo-mark">D</span>
                         <span>Dental<span class="logo-accent">Fixe</span></span>
                     </a>
-                    <p>Clínica dentária em Portimão com especialistas portugueses e brasileiros, dedicada a oferecer tratamentos de excelência num ambiente acolhedor e moderno.</p>
+                    <p>Clínica dentária em Portimão dedicada a oferecer tratamentos de excelência num ambiente acolhedor e moderno. O seu sorriso é a nossa prioridade.</p>
                 </div>
 
                 <div>
@@ -1338,6 +1541,49 @@
                 menuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
             });
+        });
+
+        // === Before & After slider ===
+        document.querySelectorAll('.ba-slider').forEach(slider => {
+            const beforeImg = slider.querySelector('.ba-img-before');
+            const handle = slider.querySelector('.ba-handle');
+            const icon = slider.querySelector('.ba-handle-icon');
+            let isDragging = false;
+
+            const setPosition = (percent) => {
+                percent = Math.max(0, Math.min(100, percent));
+                beforeImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+                handle.style.left = `${percent}%`;
+                if (icon) icon.style.left = `${percent}%`;
+            };
+
+            const moveTo = (clientX) => {
+                const rect = slider.getBoundingClientRect();
+                const percent = ((clientX - rect.left) / rect.width) * 100;
+                setPosition(percent);
+            };
+
+            slider.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                moveTo(e.clientX);
+                e.preventDefault();
+            });
+
+            slider.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                moveTo(e.touches[0].clientX);
+            }, { passive: true });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) moveTo(e.clientX);
+            });
+
+            document.addEventListener('touchmove', (e) => {
+                if (isDragging) moveTo(e.touches[0].clientX);
+            }, { passive: true });
+
+            document.addEventListener('mouseup', () => { isDragging = false; });
+            document.addEventListener('touchend', () => { isDragging = false; });
         });
 
         // === Fade-in animation on scroll ===
